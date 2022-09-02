@@ -60,7 +60,10 @@
         </div>
       </section>
       <!-- display category items -->
-      <section id="category-container" class="my-5 card w-full">
+      <section
+        id="category-container"
+        class="my-5 card gap-5 bg-light w-full border-0"
+      >
         <!-- <div class="row g-0">
           <div class="col-md-4">
             <img src="..." class="img-fluid rounded-start" alt="..." />
@@ -84,6 +87,45 @@
             </div>
           </div>
         </div> -->
+      </section>
+      <!-- modal section starts -->
+      <section>
+        <!-- Button trigger modal -->
+        <!-- <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Launch demo modal
+        </button> -->
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <!-- <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"></h5>
+              </div> -->
+              <div class="modal-body text-center" id="modal-body"></div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
