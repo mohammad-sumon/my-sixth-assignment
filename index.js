@@ -93,11 +93,12 @@ const displayCategoryDetails = (data) => {
     modalBody.textContent = '';
     const modalDiv = document.createElement('div');
     modalDiv.innerHTML = `
-        <img src="${dataIndex.thumbnail_url}">
-        <p>Title: ${dataIndex.title}</p>
-        <p>Author Name: ${dataIndex.author.name}</p>
-        <p>Total View: ${dataIndex.total_view}</p>
-        <p>Rating: ${dataIndex.rating.number}</p>
+        <img src="${dataIndex.thumbnail_url ? dataIndex.thumbnail_url : "No Image Found"}">
+        <p>Title: ${dataIndex.title ? dataIndex.title : "No Data Available"}</p>
+        <p>Author Name: ${dataIndex.author.name ? dataIndex.author.name : "No Data Available"}</p>
+        <p>Published Date: ${dataIndex.author.published_date ? dataIndex.author.published_date : "No Data Available"}</p>
+        <p>Total View: ${dataIndex.total_view ? dataIndex.total_view : "No Data Available"}</p>
+        <p>Rating: ${dataIndex.rating.number ? dataIndex.rating.number : "No Data Available"}</p>
     `;
     modalBody.appendChild(modalDiv);
 
