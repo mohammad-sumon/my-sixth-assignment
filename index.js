@@ -8,16 +8,16 @@ const loadNews = () => {
 }
 
 const displayNewsCategory = (news) => {
-    console.log(news);
-    console.log(news.data);
+    // console.log(news);
+    // console.log(news.data);
     const newsCategory = news.data.news_category;
-    console.log(newsCategory);
+    // console.log(newsCategory);
 
     newsCategory.forEach(singleNewsCategory => {
         const categoryName = singleNewsCategory.category_name;
-        console.log(categoryName);
+        // console.log(categoryName);
         const categoryId = singleNewsCategory.category_id;
-        console.log(categoryId);
+        // console.log(categoryId);
 
         const displayCategory = document.getElementById('display-category');
         const aTag = document.createElement('a');
@@ -42,7 +42,7 @@ const toggleSpinner = isLoading => {
 }
 
 const loadCategoryItems = (categoryId) => {
-    console.log('clicked category', categoryId);
+    // console.log('clicked category', categoryId);
 
     toggleSpinner(true);
 
@@ -56,11 +56,19 @@ const loadCategoryItems = (categoryId) => {
 
 const displayCategoryItems = (data) => {
     const allData = data.data;
+    // console.log(allData.length);
+
+    // nubmer display section
+    const numberDisplay = document.getElementById('number-display');
+    numberDisplay.value = `${allData.length}` + ' items found.' ?  `${allData.length}` + ' items found.' : 'No Items Found';
 
     allData.forEach(singleData => {
         console.log(singleData);
-
+        // console.log(singleData.length);
+        
         const categoryContainer = document.getElementById('category-container');
+        // categoryContainer.innerText = '';
+
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="row g-0 p-3 shadow">
@@ -70,7 +78,9 @@ const displayCategoryItems = (data) => {
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">${singleData.title ? singleData.title : 'No Result Found'}</h5>
-                    <p class="card-text" style="height: 150px; border:1px solid red; overflow: hidden; text-overflow: ellipsis;">${singleData.details}</p>
+                    <div style="">
+                    <p class="card-text" style="height: 200px; border:1px solid red; overflow: hidden; text-overflow: ellipsis;">${singleData.details}</p>
+                    </div>
                     <div class="card-text d-flex justify-content-between">
                         <div class="d-flex">
                             <img src="${singleData.author.img}" alt="" style="width: 50px" class="rounded-circle" />
@@ -85,6 +95,7 @@ const displayCategoryItems = (data) => {
         </div>
         `;
         categoryContainer.appendChild(div);
+        
         
     });
 
@@ -121,5 +132,7 @@ const displayCategoryDetails = (data) => {
     modalBody.appendChild(modalDiv);
 
 }
+
+
 
 loadNews();
