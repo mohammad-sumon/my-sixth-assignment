@@ -128,12 +128,15 @@ const displayCategoryDetails = (data) => {
     modalBody.textContent = '';
     const modalDiv = document.createElement('div');
     modalDiv.innerHTML = `
-        <img src="${dataIndex.thumbnail_url ? dataIndex.thumbnail_url : "No Image Found"}">
+        <img class="img-fluid" src="${dataIndex.author.img ? dataIndex.author.img : "No Image Found"}">
         <p>Title: ${dataIndex.title ? dataIndex.title : "No Data Available"}</p>
         <p>Author Name: ${dataIndex.author.name ? dataIndex.author.name : "No Data Available"}</p>
         <p>Published Date: ${dataIndex.author.published_date ? dataIndex.author.published_date : "No Data Available"}</p>
         <p><i class="fa-solid fa-eye"></i> ${dataIndex.total_view ? dataIndex.total_view : "No Data Available"}</p>
-        <p>Rating: ${dataIndex.rating.number ? dataIndex.rating.number : "No Data Available"}</p>
+        <p>Rating Number: ${dataIndex.rating.number ? dataIndex.rating.number : "No Data Available"}</p>
+        <p>Rating Badge: ${dataIndex.rating.badge ? dataIndex.rating.badge : "No Data Available"}</p>
+        <p>Category ID: ${dataIndex.category_id ? dataIndex.category_id : "No Data Available"}</p>
+        <p>ID: ${dataIndex._id ? dataIndex._id : "No Data Available"}</p>
     `;
     modalBody.appendChild(modalDiv);
 
