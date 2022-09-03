@@ -73,7 +73,7 @@ const displayCategoryItems = (data) => {
 
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="row g-0 p-3 shadow">
+        <div class="row g-0 p-3 shadow text-center">
             <div class="col-md-4">
                 <img src="${singleData.thumbnail_url}" class="img-fluid rounded-start" alt="..." />
             </div>
