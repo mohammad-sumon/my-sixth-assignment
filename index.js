@@ -62,12 +62,12 @@ const displayCategoryItems = (data) => {
 
     // nubmer display section
     const numberDisplay = document.getElementById('number-display');
-    numberDisplay.value = `${allData.length}` + ' items found.' ?  `${allData.length}` + ' items found.' : 'No Items Found';
+    numberDisplay.value = `${allData.length}` + ' items found.' ?  `${allData.length}` + ' items found for this Category' : 'No Items Found';
 
     allData.forEach(singleData => {
         console.log(singleData);
         // console.log(singleData.length);
-        
+
         const categoryContainer = document.getElementById('category-container');
         // categoryContainer.innerText = '';
 
@@ -80,8 +80,8 @@ const displayCategoryItems = (data) => {
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">${singleData.title ? singleData.title : 'No Result Found'}</h5>
-                    <div style="">
-                    <p class="card-text" style="height: 200px; border:1px solid red; overflow: hidden; text-overflow: ellipsis;">${singleData.details}</p>
+                    <div class="ellipsis-div">
+                    <p class="p-1">${singleData.details}</p>
                     </div>
                     <div class="card-text d-flex justify-content-between">
                         <div class="d-flex">
