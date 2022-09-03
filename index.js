@@ -16,7 +16,7 @@ const displayNewsCategory = (news) => {
 
     newsCategory.forEach(singleNewsCategory => {
         const categoryName = singleNewsCategory.category_name;
-        // console.log(categoryName);
+
         const categoryId = singleNewsCategory.category_id;
         // console.log(categoryId);
 
@@ -57,16 +57,22 @@ const loadCategoryItems = (categoryId) => {
 }
 
 const displayCategoryItems = (data) => {
+    // console.log(data);
     const allData = data.data;
+    // console.log(allData);
     // console.log(allData.length);
 
-    // nubmer display section
+    // number display section
     const numberDisplay = document.getElementById('number-display');
     numberDisplay.value = `${allData.length}` + ' items found.' ?  `${allData.length}` + ' items found for this Category' : 'No Items Found';
 
     allData.forEach(singleData => {
         console.log(singleData);
         // console.log(singleData.length);
+
+        allData.sort(function(a, b) {
+            return b.total_view - a.total_view;
+        })
 
         const categoryContainer = document.getElementById('category-container');
         // categoryContainer.innerText = '';
@@ -118,9 +124,6 @@ const displayCategoryDetails = (data) => {
     console.log(data);
     const dataIndex = data.data[0];
 
-    // const modalTitle = document.getElementById('exampleModalLabel');
-    // modalTitle.innerText = dataIndex.author.name;
-
     const modalBody = document.getElementById('modal-body');
     modalBody.textContent = '';
     const modalDiv = document.createElement('div');
@@ -135,7 +138,5 @@ const displayCategoryDetails = (data) => {
     modalBody.appendChild(modalDiv);
 
 }
-
-
 
 loadNews();
