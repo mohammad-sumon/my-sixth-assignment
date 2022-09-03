@@ -88,7 +88,7 @@ const displayCategoryItems = (data) => {
                             <img src="${singleData.author.img}" alt="" style="width: 50px" class="rounded-circle" />
                             <h3>${singleData.author.name ? singleData.author.name : 'No Result Found'}</h3>
                         </div>
-                        <div>Total View: ${singleData.total_view ? singleData.total_view : 'No Result Found'}</div>
+                        <div><i class="fa-solid fa-eye"></i> ${singleData.total_view ? singleData.total_view : 'No Result Found'}</div>
                         <div><button type="button" class="btn btn-primary" data-bs-toggle="modal"
                         data-bs-target="#exampleModal" onclick="loadCategoryDetails('${singleData._id}')">Details</button></div> 
                     </div>
@@ -129,7 +129,7 @@ const displayCategoryDetails = (data) => {
         <p>Title: ${dataIndex.title ? dataIndex.title : "No Data Available"}</p>
         <p>Author Name: ${dataIndex.author.name ? dataIndex.author.name : "No Data Available"}</p>
         <p>Published Date: ${dataIndex.author.published_date ? dataIndex.author.published_date : "No Data Available"}</p>
-        <p>Total View: ${dataIndex.total_view ? dataIndex.total_view : "No Data Available"}</p>
+        <p><i class="fa-solid fa-eye"></i> ${dataIndex.total_view ? dataIndex.total_view : "No Data Available"}</p>
         <p>Rating: ${dataIndex.rating.number ? dataIndex.rating.number : "No Data Available"}</p>
     `;
     modalBody.appendChild(modalDiv);
