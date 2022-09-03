@@ -25,11 +25,26 @@ const displayNewsCategory = (news) => {
         <a class="container mx-2" href="#" onclick="loadCategoryItems('${categoryId}')">${categoryName}</a>
         `;
         displayCategory.appendChild(aTag);
+
     })
+
+}
+
+// spinner
+const toggleSpinner = isLoading => {
+    const spinner = document.getElementById('spinner');
+    if(isLoading){
+        spinner.classList.remove('d-none');
+    }
+    else{
+        spinner.classList.add('d-none');
+    }
 }
 
 const loadCategoryItems = (categoryId) => {
     console.log('clicked category', categoryId);
+
+    toggleSpinner(true);
 
     const url = `https://openapi.programming-hero.com/api/news/category/${categoryId}`;
     console.log(url);
@@ -70,7 +85,10 @@ const displayCategoryItems = (data) => {
         </div>
         `;
         categoryContainer.appendChild(div);
-    })
+        
+    });
+
+    toggleSpinner(false);
 }
 
 const loadCategoryDetails = (_id) => {
