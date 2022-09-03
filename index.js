@@ -5,6 +5,7 @@ const loadNews = () => {
     fetch(url)
     .then(res => res.json())
     .then(data => displayNewsCategory(data))
+    .catch(error => console.log(error))
 }
 
 const displayNewsCategory = (news) => {
@@ -52,6 +53,7 @@ const loadCategoryItems = (categoryId) => {
     fetch(url)
     .then(res => res.json())
     .then(data => displayCategoryItems(data))
+    .catch(error => console.log(error))
 }
 
 const displayCategoryItems = (data) => {
@@ -109,6 +111,7 @@ const loadCategoryDetails = (_id) => {
     fetch(url)
     .then(res => res.json())
     .then(data => displayCategoryDetails(data))
+    .catch(error => console.log(error))
 }
 
 const displayCategoryDetails = (data) => {
